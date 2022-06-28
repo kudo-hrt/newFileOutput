@@ -90,7 +90,7 @@
                                                     // ファイルの数分繰り返し
                                                     for(let k = 0; k < versionDataArray.length; k++){
                                                         //console.log('versionDataArray:' + versionDataArray[k].cvId);
-                                                        if(res.contentVersionIdList == versionDataArray[k].cvId){
+                                                        if(res[j].contentVersionIdList == versionDataArray[k].cvId){
                                                             console.log('入ってる');
                                                             // template要素の内容を複製
                                                             var cloneFile = templateFile.content.cloneNode(true);

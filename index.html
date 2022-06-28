@@ -48,6 +48,28 @@
                         // データを取得できた場合
                         if(res.length != 0){
                             console.log(res);
+                            
+                            // ファイルの中身を格納する配列を定義
+                            let versionDataArray = [];
+                            
+                            // ファイルを取得
+                            for(let i = 0; i < res.length; i++){
+                                if(res[i].contentVersionIdList){
+                                    $.ajax({
+                                        type: 'GET',
+                                        crossOrigin: true,
+                                        url: 'https://protocomdev-dev-ed.my.salesforce.com/services/data/v54.0/sobjects/ContentVersion/' + res[i].contentVersionIdList + '/VersionData',
+                                        cache :false,
+                                        headers: {"Authorization" : accToken},
+                                        xhrFields : {responseType : 'blob'},
+                                        success : function (dlFile) {
+                                            let versionData = [{cvId: res[i].contentVersionIdList, versionData: dlFile}];
+                                            versionDataArray.push(versionData);
+                                        }
+                                    })
+                                }
+                            }
+                            console.log('versionDataArray:' versionDataArray);
                             /*
                             // template要素を取得
                             var template = document.getElementById('template');
@@ -63,8 +85,8 @@
                                 document.getElementById('pastInquiry').appendChild(clone);
                             }*/
                             
-                            // コンテンツバージョンのIDと名称を取得
-                            
+
+                            /*
                             
                             console.log('ファイル取得');
                             $.ajax({
@@ -114,7 +136,7 @@
                                     console.log(errorThrown);
                                     console.log(status);
                                 }
-                            })
+                            })*/
                         }
                     },
                     error : function (data, errorThrown,status) {

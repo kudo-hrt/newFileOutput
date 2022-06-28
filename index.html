@@ -89,12 +89,12 @@
                                                     console.log('作成日：' + res[j].cbd.CreatedDate);
                                                     // ファイルの数分繰り返し
                                                     for(let k = 0; k < versionDataArray.length; k++){
-                                                        console.log('versionDataArray:' + versionDataArray[k].versionData);
+                                                        console.log('versionDataArray:' + versionDataArray[k].cvId);
                                                         if(res.contentVersionIdList == versionDataArray[k].cvId){
                                                             // template要素の内容を複製
                                                             var cloneFile = templateFile.content.cloneNode(true);
                                                             // 複製したtemplate要素にデータを挿入
-                                                            cloneFile.querySelector('.File').textContent = versionDataArray[k].versionData;
+                                                            cloneFile.querySelector('.File').textContent = versionDataArray[k].cvId;
                                                             // div#containerの中に追加
                                                             document.getElementById('pastInquiry').appendChild(cloneFile);
                                                         }

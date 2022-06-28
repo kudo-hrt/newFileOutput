@@ -40,13 +40,15 @@
                 $.ajax({
                     type: 'GET',
                     crossOrigin: true,
-                    url: 'https://protocomdev-dev-ed.my.salesforce.com/services/apexrest/PPB_ContactBoardDetail__c/A0000001',
+                    url: 'https://protocomdev-dev-ed.my.salesforce.com/services/apexrest/PPB_ContactBoardDetail__c/5005j00000QyDbVAAV',
                     dataType: 'json',
                     cache :false,
                     headers: {"Authorization" : accToken},
                     success : function (res) {
                         // データを取得できた場合
                         if(res.length != 0){
+                            console.log(res);
+                            /*
                             // template要素を取得
                             var template = document.getElementById('template');
                             // データの数分繰り返し
@@ -59,7 +61,10 @@
                                 clone.querySelector('.Inquiry__c').textContent = res[i].Inquiry__c;
                                 // div#containerの中に追加
                                 document.getElementById('pastInquiry').appendChild(clone);
-                            }
+                            }*/
+                            
+                            // コンテンツバージョンのIDと名称を取得
+                            
                             
                             console.log('ファイル取得');
                             $.ajax({

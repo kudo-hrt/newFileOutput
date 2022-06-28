@@ -13,6 +13,11 @@
                <td class="Content__c"></td>
            </tr>
         </template>
+        <template id="templateFile">
+           <tr>
+               <td class="File"></td>
+           </tr>
+        </template>
         <div class="box_con02">
             <form id="inquiryForm">
                 <p>投稿一覧</p>
@@ -68,6 +73,31 @@
                                             versionDataArray.push(versionData);
                                             if(i == res.length - 1){
                                                 console.log('最後');
+                                                // template要素を取得
+                                                var template = document.getElementById('template');
+                                                // ファイルのtemplate要素を取得
+                                                var templateFile = document.getElementById('templateFile');
+                                                // コンタクトボード明細の数分繰り返し
+                                                for(let j = 0; j < res.length; j++){
+                                                    // template要素の内容を複製
+                                                    var clone = template.content.cloneNode(true);
+                                                    // 複製したtemplate要素にデータを挿入
+                                                    clone.querySelector('.CreatedDate').textContent = res[j].CreatedDate;
+                                                    clone.querySelector('.Content__c').textContent = res[j].Content__c;
+                                                    // div#containerの中に追加
+                                                    document.getElementById('pastInquiry').appendChild(clone);
+                                                    // ファイルの数分繰り返し
+                                                    for(let k = 0; k < versionDataArray.length; k++){
+                                                        if(res.contentVersionIdList == versionDataArray[k].cvId){
+                                                            // template要素の内容を複製
+                                                            var cloneFile = templateFile.content.cloneNode(true);
+                                                            // 複製したtemplate要素にデータを挿入
+                                                            cloneFile.querySelector('.File').textContent = versionDataArray[k].versionData;
+                                                            // div#containerの中に追加
+                                                            document.getElementById('pastInquiry').appendChild(cloneFile);
+                                                        }
+                                                    }
+                                                }
                                             }
                                         }
                                     })

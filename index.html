@@ -82,11 +82,11 @@
                                                     // template要素の内容を複製
                                                     var clone = template.content.cloneNode(true);
                                                     // 複製したtemplate要素にデータを挿入
-                                                    clone.querySelector('.CreatedDate').textContent = res[j].CreatedDate;
-                                                    clone.querySelector('.Content__c').textContent = res[j].Content__c;
+                                                    clone.querySelector('.CreatedDate').textContent = res[j].cbd.CreatedDate;
+                                                    clone.querySelector('.Content__c').textContent = res[j].cbd.Content__c;
                                                     // div#containerの中に追加
                                                     document.getElementById('pastInquiry').appendChild(clone);
-                                                    console.log('作成日：' + res[j].CreatedDate);
+                                                    console.log('作成日：' + res[j].cbd.CreatedDate);
                                                     /*
                                                     // ファイルの数分繰り返し
                                                     for(let k = 0; k < versionDataArray.length; k++){

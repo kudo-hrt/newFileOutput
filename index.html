@@ -68,7 +68,7 @@
                                         headers: {"Authorization" : accToken},
                                         xhrFields : {responseType : 'blob'},
                                         success : function (dlFile) {
-                                            let versionData = [{cvId: res[i].contentVersionIdList, versionData: dlFile}];
+                                            let versionData = {cvId: res[i].contentVersionIdList, versionData: dlFile};
                                             console.log('versionData:' + versionData);
                                             versionDataArray.push(versionData);
                                             if(i == res.length - 1){

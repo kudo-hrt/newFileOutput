@@ -64,13 +64,13 @@
                                         xhrFields : {responseType : 'blob'},
                                         success : function (dlFile) {
                                             let versionData = [{cvId: res[i].contentVersionIdList, versionData: dlFile}];
+                                            console.log(versionData);
                                             versionDataArray.push(versionData);
                                         }
                                     })
                                 }
                             }
                             console.log('versionDataArray:' + versionDataArray);
-                            console.log('ここ');
                             /*
                             // template要素を取得
                             var template = document.getElementById('template');

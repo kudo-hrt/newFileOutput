@@ -89,7 +89,7 @@
                                                     console.log('作成日：' + res[j].cbd.CreatedDate);
                                                     // ファイルの数分繰り返し
                                                     for(let k = 0; k < versionDataArray.length; k++){
-                                                        console.log('versionDataArray:' + versionDataArray[k]);
+                                                        console.log('versionDataArray:' + versionDataArray[k].versionData);
                                                         if(res.contentVersionIdList == versionDataArray[k].cvId){
                                                             // template要素の内容を複製
                                                             var cloneFile = templateFile.content.cloneNode(true);

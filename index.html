@@ -52,7 +52,7 @@
                     success : function (res) {
                         // データを取得できた場合
                         if(res.length != 0){
-                            console.log(res);
+                            //console.log(res);
                             
                             // ファイルの中身を格納する配列を定義
                             let versionDataArray = [];
@@ -86,11 +86,12 @@
                                                     clone.querySelector('.Content__c').textContent = res[j].cbd.Content__c;
                                                     // div#containerの中に追加
                                                     document.getElementById('pastInquiry').appendChild(clone);
-                                                    console.log('作成日：' + res[j].cbd.CreatedDate);
+                                                    //console.log('作成日：' + res[j].cbd.CreatedDate);
                                                     // ファイルの数分繰り返し
                                                     for(let k = 0; k < versionDataArray.length; k++){
-                                                        console.log('versionDataArray:' + versionDataArray[k].cvId);
+                                                        //console.log('versionDataArray:' + versionDataArray[k].cvId);
                                                         if(res.contentVersionIdList == versionDataArray[k].cvId){
+                                                            console.log('入ってる');
                                                             // template要素の内容を複製
                                                             var cloneFile = templateFile.content.cloneNode(true);
                                                             // 複製したtemplate要素にデータを挿入

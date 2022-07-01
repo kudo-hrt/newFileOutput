@@ -74,7 +74,7 @@
                 };
                 let cookie = 'dispCookie' + '=' + JSON.stringify(json) + ';';
                 
-                document.cookie = cookies;
+                document.cookie = cookie;
 
                 var accToken = 'Bearer ' + connectData.access_token;
                 // コンタクトボード明細取得

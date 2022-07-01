@@ -44,6 +44,14 @@
                 cookieArray.push({'5000l000008UmxJAAS': ['a1B0l0000012pQvEAI','a1B0l0000012pQvEAI']})
                 cookieArray.push({'5000l000008UxXbAAK': ['a1B0l0000012pRPEAY']});
                 
+                cookieArray.forEach(elm => {
+                    console.log('elm'+ JSON.stringify(elm));
+                    // オブジェクト要素をループ
+                    Object.keys(elm).forEach(key => {
+                        console.log(`key: ${key} value: ${JSON.stringify(elm[key])}`)
+                    })
+                })
+                
                 document.cookie = 'dispCookie=' + cookieArray;
                 
                 let disp = document.cookie.split('; ');

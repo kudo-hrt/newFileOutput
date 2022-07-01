@@ -47,7 +47,7 @@
                 
                 document.cookie = 'dispCookie=' + JSON.stringify(cookieArray);
                 
-                let disp = document.cookie;
+                let disp = document.cookie.split(',');
                 
                 disp.forEach(elm => {
                     console.log('elm'+ JSON.stringify(elm));

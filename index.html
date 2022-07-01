@@ -45,6 +45,8 @@
                 cookieArray.push({'5000l000008UxXbAAK': ['a1B0l0000012pRPEAY']});
 
                 document.cookie = 'dispCookie=' + cookieArray;
+                
+                console.log(document.cookie);
 
                 var accToken = 'Bearer ' + connectData.access_token;
                 // コンタクトボード明細取得

@@ -52,7 +52,7 @@
                     })
                 })
                 
-                document.cookie = 'dispCookie=' + cookieArray;
+                document.cookie = 'dispCookie=' + encodeURI(cookieArray.toString());
                 
                 let disp = document.cookie.split('; ');
                 

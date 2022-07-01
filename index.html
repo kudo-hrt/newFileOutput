@@ -54,7 +54,7 @@
                 
                 document.cookie = 'dispCookie=' + encodeURI(cookieArray.toString());
                 
-                let disp = document.cookie.split('; ');
+                let disp = decodeURI(document.cookie);
                 
                 disp.forEach(elm => {
                     console.log('elm'+ JSON.stringify(elm));

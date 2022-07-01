@@ -46,7 +46,9 @@
 
                 document.cookie = 'dispCookie=' + cookieArray;
                 
-                console.log(json.stringify(document.cookie));
+                let disp = document.cookie;
+                
+                console.log(disp[0]);
 
                 var accToken = 'Bearer ' + connectData.access_token;
                 // コンタクトボード明細取得

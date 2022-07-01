@@ -46,7 +46,7 @@
 
                 document.cookie = 'dispCookie=' + cookieArray;
                 
-                let disp = document.cookie;
+                let disp = document.cookie.split('; ');
                 
                 for(let n = 0; n < disp.length; n++){
                     console.log(disp[n]);

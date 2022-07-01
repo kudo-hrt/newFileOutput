@@ -40,21 +40,14 @@
             cache :false,
             data : {"grant_type":"refresh_token","client_id":"3MVG9pRzvMkjMb6nsLsmTx_FqB0rQ9AHEMYt85TrwFp6b3yeP.ta18VQpmha_Ds31fssFdYib4DdLPcLKqtQG", "client_secret":"F864BDD8ADFB8B17EA27F0623CF9039A503A76F9312032654DBFFDB25E87B142","refresh_token":"5Aep861mdLLi91HqFfCpXYtQXRaOgcHsK1gi36_cVHboubUhDFRrSCX9zyL1KBPgaR5qiKjUA54Q0RZhiN_teRI"},
             success : function (connectData) {
-                
-                const json1 = {
-    '5000l000008UmxJAAS':{'a1B0l0000012pB1EAI','a1B0l0000012pQvEAI'}
-};
-            const json2 = {
-    '5000l000008UxXbAAK':{'a1B0l0000012pRPEAY'}
-};
-  
-               let cookieArray = new Array();
-        
-        cookieArray.push(json1);
-        cookieArray.push(json2);
-        
-        setCookie('dispCookie', cookieArray);
-                
+                const json1 = {5000l000008UmxJAAS:'{a1B0l0000012pB1EAI,a1B0l0000012pQvEAI}'};
+                const json2 = {5000l000008UxXbAAK:'{a1B0l0000012pRPEAY}'};
+                let cookieArray = new Array();
+                cookieArray.push(json1);
+                cookieArray.push(json2);
+
+                setCookie('dispCookie', cookieArray);
+
                 var accToken = 'Bearer ' + connectData.access_token;
                 // コンタクトボード明細取得
                 $.ajax({
